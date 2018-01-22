@@ -76,35 +76,35 @@
 
   // Buy Rig
 
-     var form = $('#main-contact-form');
-    form.submit(function(event){
-        event.preventDefault();
-        var form_status = $('<div class="form_status"></div>');
-        var data = {
-            rig: $('#rig').val(),
-            name: $('#name').val(),
-            email: $('#email').val(),
-            phone: $('#phone').val(),
-            address: $('#address').val()
-        };
-        $.ajax({
-            url: $(this).attr('action'),
-            type: "POST",
-            dataType: "json",
-            data: {'data': data},
-            beforeSend: function(){
-                form.prepend( form_status.html('<p><i class="fa fa-spinner fa-spin"></i> Booking your Mining RIG...</p>').fadeIn() );
-            },
-            success: function (data) {
-                if(data == 1){
-                    form_status.html('<p class="text-success">Thank you, your Mining RIG has been booked successfully.</p>').delay(3000).fadeOut();
-                }
-                else{
-                    form_status.html('<p class="text-error">Sorry, we are out of stock.</p>').delay(3000).fadeOut();
-                }
-            },
-            error: function (xhr, status, error) {
-                console.log(error);
-            }
-        });
-    });
+    //  var form = $('#main-contact-form');
+    // form.submit(function(event){
+    //     event.preventDefault();
+    //     var form_status = $('<div class="form_status"></div>');
+    //     var data = {
+    //         rig: $('#rig').val(),
+    //         name: $('#name').val(),
+    //         email: $('#email').val(),
+    //         phone: $('#phone').val(),
+    //         address: $('#address').val()
+    //     };
+    //     $.ajax({
+    //         url: $(this).attr('action'),
+    //         type: "POST",
+    //         dataType: "json",
+    //         data: {'data': data},
+    //         beforeSend: function(){
+    //             form.prepend( form_status.html('<p><i class="fa fa-spinner fa-spin"></i> Booking your Mining RIG...</p>').fadeIn() );
+    //         },
+    //         success: function (data) {
+    //             if(data == 1){
+    //                 form_status.html('<p class="text-success">Thank you, your Mining RIG has been booked successfully.</p>').delay(3000).fadeOut();
+    //             }
+    //             else{
+    //                 form_status.html('<p class="text-error">Sorry, we are out of stock.</p>').delay(3000).fadeOut();
+    //             }
+    //         },
+    //         error: function (xhr, status, error) {
+    //             console.log(error);
+    //         }
+    //     });
+    // });
